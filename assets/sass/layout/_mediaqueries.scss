@@ -1,0 +1,305 @@
+@media screen and (min-width: 768px) and (max-width:1200px) {
+
+    //Global Settings
+    .btn {
+        padding: 5px 10px !important;
+    }
+
+    header {
+        height: 100px !important;
+
+        .container {
+            grid-template-columns: .20fr 1fr;
+            justify-items: end;
+
+
+            .hamburger {
+                display: block;
+                z-index: 51;
+            }
+
+            ul {
+                opacity: 0;
+                visibility: hidden;
+                transform: scale(0);
+                z-index: 1;
+                position: absolute;
+                top: 0;
+                right: 0;
+                display: grid;
+                background: $color-white;
+                width: 100vw;
+                height: 100vh;
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(5, 100px);
+                align-items: center;
+                justify-items: center;
+                transition: 0.1s all linear;
+                margin-top: 100px;
+
+                li {
+                    // margin: 50px 0 0 0;
+                    margin: 0px;
+                }
+            }
+
+            ul.clicked {
+                transform: scale(1);
+                opacity: 1;
+                visibility: visible;
+                z-index: 50;
+            }
+        }
+    }
+
+    // End of Header
+
+    .banner {
+
+        .content {
+            .enter-email {
+                grid-template-columns: 1fr !important;
+
+                input {
+                    width: 100% !important;
+                }
+            }
+        }
+
+        .content-image {
+            display: grid;
+            justify-items: center;
+            align-items: center;
+
+            img {
+                width: 450px;
+                height: 350px;
+            }
+
+            a {
+                position: relative !important;
+                left: auto !important;
+                top: auto !important;
+            }
+        }
+    }
+
+    // Banner
+
+    .showcase {
+        margin-top: 50px;
+
+        .brand {
+            grid-gap: 1rem !important;
+
+            img {
+                height: 35px !important;
+            }
+        }
+    }
+
+    // showcase
+
+    .cta .container {
+        grid-gap: 1rem;
+    }
+
+    // cta
+
+    .contact {
+        .container {
+            grid-template-columns: 1fr 1fr !important;
+            grid-gap: 1rem !important;
+        }
+
+        .contact-title {
+            .info {
+                .info-col {
+                    padding: 1rem !important;
+                }
+            }
+        }
+
+        form {
+            margin: 2rem 0rem !important;
+        }
+    }
+
+
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        height: 100px !important;
+
+        .container {
+            justify-items: end;
+
+
+            .hamburger {
+                display: block;
+                z-index: 51;
+            }
+
+            ul {
+                opacity: 0;
+                visibility: hidden;
+                transform: scale(0);
+                z-index: 1;
+                position: absolute;
+                top: 0;
+                right: 0;
+                display: grid;
+                background: $color-white;
+                width: 100vw;
+                height: 100vh;
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(5, 100px);
+                align-items: center;
+                justify-items: center;
+                transition: 0.1s all linear;
+                margin-top: 100px;
+
+                li {
+                    // margin: 50px 0 0 0;
+                    margin: 0px;
+                }
+            }
+
+            ul.clicked {
+                transform: scale(1);
+                opacity: 1;
+                visibility: visible;
+                z-index: 50;
+            }
+        }
+    }
+
+    // End of Header
+
+    .banner {
+        .container {
+            grid-template-columns: 1fr !important;
+            // grid-template-rows: 1fr 1fr !important;
+
+            .content {
+                grid-area: content;
+
+                .enter-email {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    grid-template-rows: 1fr 1fr;
+                    grid-gap: 1rem;
+
+                    input {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .content-image {
+                grid-area: contents;
+                display: grid;
+                justify-items: center;
+                align-items: center;
+
+
+                img {
+                    width: 100%;
+                }
+
+                a {
+                    position: relative !important;
+                    left: auto !important;
+                    top: auto !important;
+                }
+            }
+
+            grid-template-areas: 'contents contents''content content';
+        }
+    }
+
+    // Banner
+
+    .showcase {
+        display: none;
+    }
+
+    // Showcase
+
+
+    .services {
+        .tabs .tabs-links {
+            font-size: 1rem;
+        }
+
+        .tabs-content {
+            grid-template-columns: 1fr !important;
+            grid-template-rows: auto;
+
+            .tab-content-item {
+                border-right: none !important;
+                border-bottom: 1px solid $color-grey;
+            }
+        }
+    }
+
+    // services
+
+    .cta {
+        padding: 50px 0px !important;
+
+        .container {
+            grid-template-columns: 1fr !important;
+            grid-template-rows: repeat(auto-fit, minmax(1fr, 1fr));
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    // cta
+
+    .contact {
+        .container {
+            grid-template-columns: 1fr !important;
+
+            .contact-title {
+                h4 {
+                    margin-top: 40px;
+                }
+
+                .info {
+                    max-width: 100% !important;
+                    align-items: center !important;
+
+                    .info-col {
+                        padding: 0 !important;
+                    }
+                }
+            }
+        }
+    }
+
+    // Footer
+    footer .container {
+        grid-template-columns: 1fr !important;
+        grid-gap: 3rem;
+        justify-items: center;
+
+        .col {
+            text-align: center;
+        }
+
+        .col-content {
+
+
+            .col-content-bottom {
+                margin-top: 1rem !important;
+            }
+        }
+    }
+
+}

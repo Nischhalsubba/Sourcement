@@ -15,11 +15,14 @@ var replace = require('gulp-replace');
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
+const babel = require('gulp-babel');
 // File path variables
 const files = {
     scssPath: './assets/sass/**/*.scss',
-    jsPath: './assets/js/**/*.js'
-}
+    jsPath: ['./assets/js/tabs.js','./assets/js/model.js','./assets/js/custom.js']
+};
+
+const vendorFiles = ['./node_modules/@glidejs/glide/dist/glide.min.js', './node_modules/particles.js/particles.js'];
 
 // sass task
 function scssTask() {
@@ -35,7 +38,16 @@ function scssTask() {
 function jsTask() {
     return src(files.jsPath)
         .pipe(concat('app.js'))
-        .pipe(uglify())
+        // .pipe(babel({
+        //     presets: ['@babel/env']
+        // }))
+        // .pipe(uglify())
+        .pipe(dest('./js/'));
+}
+
+function jsVendorTask() {
+    return src(vendorFiles)
+        .pipe(concat('vendor.js'))
         .pipe(dest('./js/'));
 }
 
@@ -52,14 +64,14 @@ function cacheBustTask() {
 
 // watch task
 function watchTasks() {
-    watch([files.scssPath, files.jsPath],
+    watch([files.scssPath, './assets/js/*.js'],
         parallel(scssTask, jsTask)
     );
 }
 
 // Default task
 exports.default = series(
-    parallel(scssTask, jsTask),
+    parallel(scssTask, jsTask, jsVendorTask),
     cacheBustTask,
     watchTasks
 )

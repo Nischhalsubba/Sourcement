@@ -11,13 +11,12 @@ html {
 }
 
 body {
-    background: $background-body;
+    background: $color-white;
     text-rendering: optimizeSpeed;
+    margin: 0;
 }
 
-h4 {
-    background: $color_background-hr;
-}
+h4 {}
 
 /*--------------------------------------------------------------
 # List
@@ -37,32 +36,177 @@ dt {
 //description Title
 
 img {
-    height: auto;
-    max-width: 100%;
+    display: block;
     vertical-align: center;
 }
 
 table {
     margin: 0;
 
-    td,th{
+    td,
+    th {
         padding: 12px 15px;
-        border-bottom: 1px solid $color-background-hr;
+        border-bottom: 1px solid $color-grey;
         text-align: left;
     }
 }
 
-code{
+code {
     margin: 0 .2rem;
-    background: $color-background-hr;
     border-radius: 4px;
     display: block;
 }
 
-img{
-    display: block;
+header {
+    margin: 0;
+}
 
-    // Can be changed
+.container {
+    width: 90%;
+    max-width: 1170px;
+    margin: auto;
+}
+
+.btn {
+    padding: 10px 30px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1rem;
+    // display: grid;
+    // align-items: center;
+}
+
+.btn-rounded {
+    border-radius: 5px;
+}
+
+@keyframes arrowMove {
+    0% {}
+
+    25% {
+        transform: translateX(50px)
+    }
+
+    50% {
+        opacity: 0;
+        transform: translateX(-50px)
+    }
+
+    75% {
+        opacity: 0.5;
+        transform: translateX(-20px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0px)
+    }
+}
+
+.btn-style2 {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    justify-items: end;
+    align-items: center;
+
+    // align-items: center;
+    .btn-text {
+        padding: 10px 10px 10px 20px;
+    }
+
+    .arrow {
+        display: grid;
+        align-items: center;
+        padding: 10px;
+        transition: all 0.5s linear;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    &:hover .arrow img {
+        animation: arrowMove 0.5s ease-out;
+
+    }
+}
+
+.btn-outline {
+    border: 2px solid $color-primary;
+    transition: 0.5s all linear;
+
+    &:hover {
+        background-color: $color-primary;
+        color: $color-white;
+    }
+}
+
+.btn-white {
+    background-color: $color-white;
+    box-shadow: 0px 0px 71px -20px rgba(0, 0, 0, 0.75);
+
+    i {
+        margin: auto;
+    }
+}
+
+.btn-primary {
+    background-color: $color-primary;
+    border: 2px solid $color-primary;
+    color: $color-lightgrey;
+    font-weight: 400;
+    transition: 0.3s all linear;
+
+    &:hover {
+        background-color: $color-white;
+        border: 2px solid $color-primary;
+        color: $color-primary;
+    }
+}
+
+.btn-accent {
+    background-color: $color-accent;
+    border: 2px solid $color-accent;
+    font-weight: 400;
+    color: $color-white;
+    transition: 0.5s all linear;
+
+    &:hover {
+        background-color: $color-white;
+        color: $color-accent !important;
+        border: 2px solid $color-accent;
+        font-weight: 400;
+    }
+
+}
+
+a {
+    color: $color-primary;
+}
+
+.bg-black {
+    background-color: $color-dark;
+}
+
+#particles-js,
+#particles-js2 {
     width: 100%;
-    object-fit: contain;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.highlight-primary {
+    color: $color-primary !important;
+    font-weight: 500 !important;
+}
+
+small {
+    font-weight: 400;
+    font-size: 0.75rem;
+    letter-spacing: 0.01rem;
+}
+
+.displayNone {
+    display: none !important;
 }
