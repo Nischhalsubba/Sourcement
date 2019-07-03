@@ -34,35 +34,83 @@ class Tabs{
         });
     }
 }
-class Model {
-    constructor(popup) {
-        this.trigger = popup;
-        this.model = document.querySelector('.model');
-        this.modelContent = document.querySelector('.model .model-content');
+    const model_open=document.querySelectorAll('.model_open');
+    const model=document.querySelector('.model');
+    const btn_close=document.querySelector('#btn_close');
 
+    //var old_model_param={'title':document.querySelector(".model_content h2").innerHTML,'content':document.querySelector(".model_content p").innerHTML};
+    var old_model_param={'content':document.querySelector(".model_content p").innerHTML};
 
-        this.trigger.addEventListener('click', (e) => {
-            e.preventDefault();
-            var target = e.target || e.srcElement;
-            this.showModel(target);
+model_open.forEach((m) => {
+            m.addEventListener('click',(e)=>{
+                e.preventDefault();
+                var title=m.getAttribute('data-title');
+                var content=m.getAttribute('data-content');
+                
+                showModel({'title':title,'content':content});
+            })
         });
 
-        this.model.addEventListener('click', (e) => {
-            this.closeModel();
+        btn_close.addEventListener('click',()=>{
+            hideModel();
+        });
+
+        model.addEventListener('click',(e)=>{
+            if(e.target==model)
+                hideModel();
         })
 
-    }
-    showModel(btn) {
-        this.model.classList.toggle('show-model');
-        var a = btn.getAttribute('data-modelContent');
-        console.log(btn)
-    }
 
-    closeModel() {
-        this.model.classList.toggle('show-model');
-    }
+function showModel(model_params) {
+            setModelContent(model_params);
+            model.style.display='block';
+        }
 
-}
+        function setModelContent(model_params){
+            //const heading=document.querySelector(".model_content h2");
+            const content=document.querySelector(".model_content p");
+
+            //if(model_params.title)
+            //    heading.innerHTML=model_params.title;
+
+            if(model_params.content)
+                content.innerHTML=model_params.content;
+        }
+
+        function hideModel(){
+            setModelContent(old_model_param);
+            model.style.display='none';
+        }
+
+// class Model {
+//     constructor(popup) {
+//         this.trigger = popup;
+//         this.model = document.querySelector('.model');
+//         this.modelContent = document.querySelector('.model .model-content');
+
+
+//         this.trigger.addEventListener('click', (e) => {
+//             e.preventDefault();
+//             var target = e.target || e.srcElement;
+//             this.showModel(target);
+//         });
+
+//         this.model.addEventListener('click', (e) => {
+//             this.closeModel();
+//         })
+
+//     }
+//     showModel(btn) {
+//         this.model.classList.toggle('show-model');
+//         var a = btn.getAttribute('data-modelContent');
+//         console.log(btn)
+//     }
+
+//     closeModel() {
+//         this.model.classList.toggle('show-model');
+//     }
+
+// }
 // Sticky Navbar
 window.onscroll = function () {
     stickyNavbar()
@@ -99,20 +147,50 @@ if (tabsContainer)
     new Tabs(tabsContainer);
 
 
-// Particles JS
-particlesJS.load('particles-js', './particles-old.json', function () {
-    console.log('callback - particles.js config loaded');
-});
+if (window.innerWidth > 1200) {
+    // console.log('suceess')
+    // Particles JS
+    particlesJS.load('particles-js', './particles setting/particles-old.json', function () {
+        console.log('callback - particles.js config loaded');
+    });
 
-particlesJS.load('particles-js2', './particlesjs-config.json', function () {
-    console.log('callback - particles.js config loaded');
-});
+    particlesJS.load('particles-js2', './particles setting/particlesjs-config.json', function () {
+        console.log('callback - particles.js config loaded');
+    });
+}
+
+// Responsive Particles JS
+window.addEventListener('resize', (e) => {
+    checkOnResize();
+}, true);
+
+function checkOnResize() {
+    if (window.innerWidth > 1200) {
+        // console.log('suceess')
+        // Particles JS
+        particlesJS.load('particles-js', './particles setting/particles-old.json', function () {
+            console.log('callback - particles.js config loaded');
+        });
+
+        particlesJS.load('particles-js2', './particles setting/particlesjs-config.json', function () {
+            console.log('callback - particles.js config loaded');
+        });
+    } else {
+        particlesJS.load('particles-js', './particles setting/particles-old-mobile.json', function () {
+            console.log('callback - particles.js config loaded');
+        });
+
+        particlesJS.load('particles-js2', './particles setting/particles-config-mobile.json', function () {
+            console.log('callback - particles.js config loaded');
+        });
+    }
+}
 
 // Popup model
-var popups = document.querySelectorAll('.popup');
-popups.forEach(popup =>{
-    new Model(popup);    
-})
+// var popups = document.querySelectorAll('.popup');
+// popups.forEach(popup => {
+//     new Model(popup);
+// })
 
 
 

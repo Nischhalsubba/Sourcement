@@ -1,0 +1,54 @@
+form {
+    background-color: $color-white;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    color: $color-primary;
+    z-index: 5;
+
+    p {
+        margin: 0 0 1rem 0;
+        font-size: 1.5rem;
+
+        strong {
+            font-size: 1.75rem;
+        }
+    }
+
+    input,
+    select,
+    textarea {
+        border: 2px solid $color-grey;
+        padding: 10px 0px 10px 10px;
+        width: 100%;
+        margin-bottom: 15px;
+        transition: 0.2s all ease-in;
+
+        border-radius: 5px;
+
+        &::placeholder {
+            color: $color-secondary;
+            font-size: 16px;
+        }
+
+        &:active,
+        &:focus {
+            border: 2px solid $color-primary;
+            outline: none;
+            // background: lighten( $color-grey , 15%);
+        }
+    }
+
+    select {
+        background: none;
+        color: $color-primary;
+    }
+
+
+
+    small {
+        line-height: 20px;
+        margin-top: 15px;
+
+    }
+}

@@ -34,20 +34,50 @@ if (tabsContainer)
     new Tabs(tabsContainer);
 
 
-// Particles JS
-particlesJS.load('particles-js', './particles-old.json', function () {
-    console.log('callback - particles.js config loaded');
-});
+if (window.innerWidth > 1200) {
+    // console.log('suceess')
+    // Particles JS
+    particlesJS.load('particles-js', './particles setting/particles-old.json', function () {
+        console.log('callback - particles.js config loaded');
+    });
 
-particlesJS.load('particles-js2', './particlesjs-config.json', function () {
-    console.log('callback - particles.js config loaded');
-});
+    particlesJS.load('particles-js2', './particles setting/particlesjs-config.json', function () {
+        console.log('callback - particles.js config loaded');
+    });
+}
+
+// Responsive Particles JS
+window.addEventListener('resize', (e) => {
+    checkOnResize();
+}, true);
+
+function checkOnResize() {
+    if (window.innerWidth > 1200) {
+        // console.log('suceess')
+        // Particles JS
+        particlesJS.load('particles-js', './particles setting/particles-old.json', function () {
+            console.log('callback - particles.js config loaded');
+        });
+
+        particlesJS.load('particles-js2', './particles setting/particlesjs-config.json', function () {
+            console.log('callback - particles.js config loaded');
+        });
+    } else {
+        particlesJS.load('particles-js', './particles setting/particles-old-mobile.json', function () {
+            console.log('callback - particles.js config loaded');
+        });
+
+        particlesJS.load('particles-js2', './particles setting/particles-config-mobile.json', function () {
+            console.log('callback - particles.js config loaded');
+        });
+    }
+}
 
 // Popup model
-var popups = document.querySelectorAll('.popup');
-popups.forEach(popup =>{
-    new Model(popup);    
-})
+// var popups = document.querySelectorAll('.popup');
+// popups.forEach(popup => {
+//     new Model(popup);
+// })
 
 
 
