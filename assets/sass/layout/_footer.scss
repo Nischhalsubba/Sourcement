@@ -1,64 +1,89 @@
 footer {
     background-color: $color-lightgrey;
-    padding: 50px 0px;
+    padding: 50px 0px 0px 0px;
 
     .container {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        position: relative;
 
-        .col {
-            h3 {
-                font-size: 20px;
-            }
+        .cols {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            padding-bottom: 20px;
 
-            img {
-                margin-top: -9px;
-            }
-
-            .col-content {
-                margin-top: 15px;
-
-                h5 {
-                    line-height: 16px;
-                    a {
-                        font-size: 16px;
-                        font-weight: 400;
-                        font-family: $font__secondary;
-                        color: $color-grey;
-                        margin-bottom: 5px;
-                        text-decoration: none;
-
-                        &:hover {
-                            color: $color-primary;
-                        }
-                    }
+            .col {
+                h3 {
+                    font-size: 20px;
                 }
 
-                .col-content-bottom {
-                    margin-top: 3rem;
-                    display: grid;
-                    grid-template-rows: 1fr 1fr 1fr;
-                    justify-content: space-between;
-                    align-items: center;
-                    grid-gap: .4rem;
+                img {
+                    margin-top: -9px;
+                }
 
-                    h5 a {
-                        font-weight: 600;
-                        color: $color-primary;
-                        margin: 0;
+                .col-content {
+                    margin-top: 15px;
+
+                    h5 {
+                        line-height: 16px;
+
+                        a {
+                            font-size: 16px;
+                            font-weight: 400;
+                            font-family: $font__secondary;
+                            color: darken($color-grey, 20%);
+                            margin-bottom: 5px;
+                            text-decoration: none;
+
+                            &:hover {
+                                color: $color-primary;
+                            }
+                        }
                     }
 
-                    .col-social {
+                    .col-content-bottom {
+                        margin-top: 2rem;
                         display: grid;
-                        grid-template-columns: repeat(5, 1fr);
+                        grid-template-rows: 1fr 1fr;
+                        justify-content: space-between;
+                        align-items: center;
+                        grid-gap: .4rem;
 
-                        img {
-                            width: 25px;
-                            height: 25px;
+                        .col-social {
+                            display: grid;
+                            grid-template-columns: repeat(5, 1fr);
+
+                            img {
+                                width: 25px;
+                                height: 25px;
+                            }
                         }
                     }
                 }
             }
+        }
+
+        .enter-email {
+            width: 25%;
+            position: absolute;
+            bottom: 11px;
+            right: 5%;
+            grid-template-columns: 2fr .5fr;
+            grid-gap: 1rem;
+
+            input {
+                width: auto;
+            }
+        }
+    }
+
+    .copright {
+        background: $color-primary;
+        height: 30px;
+
+        p {
+            color: $color-white;
+            margin: 0;
+            text-align: center;
+            padding: 2px 0px;
         }
     }
 }

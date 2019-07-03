@@ -15,6 +15,10 @@ form {
         }
     }
 
+    input[type=submit]{
+    cursor: pointer;
+    }
+
     input,
     select,
     textarea {
@@ -23,7 +27,6 @@ form {
         width: 100%;
         margin-bottom: 15px;
         transition: 0.2s all ease-in;
-
         border-radius: 5px;
 
         &::placeholder {
