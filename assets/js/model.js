@@ -2,6 +2,8 @@
     const model = document.querySelector('.model');
     const btn_close = document.querySelector('#btn_close');
 
+if (model) {
+        
     //var old_model_param={'title':document.querySelector(".model_content h2").innerHTML,'content':document.querySelector(".model_content p").innerHTML};
     var old_model_param = {
         'content': document.querySelector(".model_content p").innerHTML
@@ -50,3 +52,4 @@
         setModelContent(old_model_param);
         model.style.display = 'none';
     }
+}

@@ -43,7 +43,13 @@
     cursor: pointer;
 }
 
-// .model {
+@media screen and (max-width: 768px) {
+    .model .model_content {
+        width: 100% !important;
+    }
+}
+
+ // .model {
 //     z-index: 5;
 //     position: fixed;
 //     left: 0;

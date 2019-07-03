@@ -38,6 +38,8 @@ class Tabs{
     const model = document.querySelector('.model');
     const btn_close = document.querySelector('#btn_close');
 
+if (model) {
+        
     //var old_model_param={'title':document.querySelector(".model_content h2").innerHTML,'content':document.querySelector(".model_content p").innerHTML};
     var old_model_param = {
         'content': document.querySelector(".model_content p").innerHTML
@@ -86,6 +88,7 @@ class Tabs{
         setModelContent(old_model_param);
         model.style.display = 'none';
     }
+}
 // Sticky Navbar
 window.onscroll = function () {
     stickyNavbar()
@@ -117,21 +120,30 @@ function menuShow() {
 }
 
 // Services tabs
-var tabsContainer = document.querySelector('.tabs-container');
-if (tabsContainer)
-    new Tabs(tabsContainer);
+var tabsContainer = document.querySelectorAll('.tabs-container');
+tabsContainer.forEach(tc => {
+    new Tabs(tc);
+})
+
+
 
 
 if (window.innerWidth > 1200) {
-    // console.log('suceess')
-    // Particles JS
-    particlesJS.load('particles-js', './particles setting/particles-old.json', function () {
-        console.log('callback - particles.js config loaded');
-    });
+    console.log('suceess')
+    //Particles JS
+    var particlesMarkup = document.querySelector('#particles-js');
+    if (particlesMarkup) {
+        particlesJS.load('particles-js', './particles setting/particles-old.json', function () {
+            console.log('callback - particles.js config loaded');
+        });
+    }
 
-    particlesJS.load('particles-js2', './particles setting/particlesjs-config.json', function () {
-        console.log('callback - particles.js config loaded');
-    });
+    var particlesMarkup2 = document.querySelector('#particles-js2');
+    if (particlesMarkup2) {
+        particlesJS.load('particles-js2', './particles setting/particlesjs-config.json', function () {
+            console.log('callback - particles.js config loaded');
+        });
+    }
 }
 
 // Responsive Particles JS
@@ -164,20 +176,23 @@ function checkOnResize() {
 
 
 // Glide JS
-new Glide('.glide', {
-    type: 'carousel',
-    autoplay: 1500,
-    perView: 5,
-    peek: {
-        before: 100,
-        after: 0
-    },
-    breakpoints: {
-        1024: {
-            perView: 2
+var glideMarkup = document.querySelector('.glide');
+if (glideMarkup) {
+    new Glide('.glide', {
+        type: 'carousel',
+        autoplay: 1500,
+        perView: 5,
+        peek: {
+            before: 100,
+            after: 0
         },
-        768: {
-            perView: 1
+        breakpoints: {
+            1024: {
+                perView: 2
+            },
+            768: {
+                perView: 1
+            }
         }
-    }
-}).mount()
+    }).mount()
+}

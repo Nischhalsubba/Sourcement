@@ -1,0 +1,27 @@
+.hero {
+    position: relative;
+    height: 300px;
+    background-color: $color-primary;
+
+    .container {
+        position: relative;
+        z-index: 10;
+        height: 100%;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+
+        .hero-title {
+            text-align: center;
+
+            h1, 
+            p {
+                color: white;
+            }
+        }
+
+
+
+    }
+
+}
