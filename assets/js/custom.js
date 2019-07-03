@@ -73,12 +73,6 @@ function checkOnResize() {
     }
 }
 
-// Popup model
-// var popups = document.querySelectorAll('.popup');
-// popups.forEach(popup => {
-//     new Model(popup);
-// })
-
 
 
 // Glide JS
