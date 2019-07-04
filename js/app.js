@@ -176,7 +176,7 @@ function checkOnResize() {
 
 
 // Glide JS
-var glideMarkup = document.querySelector('.glide');
+var glideMarkup = document.querySelector('.slideshow .glide');
 if (glideMarkup) {
     new Glide('.glide', {
         type: 'carousel',
@@ -194,5 +194,15 @@ if (glideMarkup) {
                 perView: 1
             }
         }
+    }).mount()
+}
+
+// Testimonial Glide JS
+var glideMarkup = document.querySelector('.testimonial .glide');
+if (glideMarkup) {
+    new Glide('.glide', {
+        type: 'carousel',
+        perView: '1',
+        gap: 10
     }).mount()
 }
