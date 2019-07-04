@@ -10,7 +10,7 @@
         grid-gap: 4rem;
         align-items: center;
 
-        
+
 
         .content {
             z-index: 5;
@@ -95,16 +95,13 @@
 
 section.services {
     background-image: url('./assets/images/background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
     .container {
         // background:$color-primary;
         padding: 50px 0px;
-    }
-
-    h1 {
-        text-align: center;
-        margin-bottom: 50px;
-        color: $color-primary;
     }
 }
 

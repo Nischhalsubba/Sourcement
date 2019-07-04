@@ -198,11 +198,21 @@ if (glideMarkup) {
 }
 
 // Testimonial Glide JS
-var glideMarkup = document.querySelector('.testimonial .glide');
-if (glideMarkup) {
+var testimonialglideMarkup = document.querySelector('.testimonial .glide');
+if (testimonialglideMarkup) {
     new Glide('.glide', {
         type: 'carousel',
         perView: '1',
         gap: 10
+    }).mount()
+}
+
+//Default carousel
+var defaultCarousel = document.querySelector('.carousel .glide')
+if (defaultCarousel) {
+    new Glide('.glide', {
+        type: 'carousel',
+        autoplay: 1500,
+        perView: 5,
     }).mount()
 }

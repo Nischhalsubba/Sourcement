@@ -16,6 +16,7 @@ header {
             flex-direction: row;
             align-items: center;
             justify-content: flex-end;
+            list-style-type: none;
 
             li {
                 margin-right: 40px;
@@ -23,7 +24,7 @@ header {
 
                 &:hover a {
                     border-bottom: 2px solid $color-primary;
-                    color:$color-accent;
+                    color: $color-accent;
                 }
 
                 &:last-child {

@@ -108,13 +108,7 @@
                     position: relative;
                     padding-left: 30px;
 
-                    &::before {
-                        content: "\201C";
-                        font-size: 6rem;
-                        position: absolute;
-                        left: 0;
-                        font-family: 'Times New Roman', Times, serif;
-                    }
+                    
                 }
             }
             .glide__bullets {

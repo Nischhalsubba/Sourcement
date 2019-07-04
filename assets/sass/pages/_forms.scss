@@ -6,6 +6,13 @@ form {
     color: $color-primary;
     z-index: 5;
 
+    fieldset {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-gap: 1rem;
+    }
+
     p {
         margin: 0 0 1rem 0;
         font-size: 1.5rem;
@@ -15,9 +22,11 @@ form {
         }
     }
 
-    input[type=submit]{
-    cursor: pointer;
+    input[type=submit] {
+        cursor: pointer;
     }
+
+
 
     input,
     select,
@@ -40,6 +49,12 @@ form {
             outline: none;
             // background: lighten( $color-grey , 15%);
         }
+    }
+
+    input[type=radio],
+    input[type=checkbox] {
+        display: inline-block;
+        width: auto;
     }
 
     select {

@@ -65,16 +65,30 @@ input,
 select,
 a,
 input::placeholder,
-div,textarea {
+div,
+textarea {
     font-family: $font__secondary;
     font-size: 16px;
     line-height: 28px;
 }
 
 blockquote {
-    margin: 15px 40px;
+    // margin: 15px 40px;
+    margin: 0;
 }
 
-.text-white{
+caption {
+    font-weight: 400;
+}
+
+.text-white {
     color: $color-white;
+}
+
+.thin {
+    font-weight: 300;
+}
+
+.fancy {
+    font-family: 'Tangerine', cursive;
 }

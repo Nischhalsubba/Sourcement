@@ -16,7 +16,6 @@ body {
     margin: 0;
 }
 
-h4 {}
 
 /*--------------------------------------------------------------
 # List
@@ -26,7 +25,7 @@ ul,
 ol {
     margin: 0%;
     padding: 0;
-    list-style-type: none;
+    // list-style-type: none;
 }
 
 dt {
@@ -46,7 +45,7 @@ table {
     td,
     th {
         padding: 12px 15px;
-        border-bottom: 1px solid $color-grey;
+        border: 1px solid $color-grey;
         text-align: left;
     }
 }
@@ -59,6 +58,16 @@ code {
 
 header {
     margin: 0;
+}
+
+
+
+.caps {
+    text-transform: uppercase;
+}
+
+strong {
+    font-weight: 700;
 }
 
 .container {
@@ -213,4 +222,21 @@ small {
 
 .displayNone {
     display: none !important;
+}
+
+pre {
+    background-color: $color-grey;
+}
+
+blockquote {
+position: relative;
+    &::before {
+        &::before {
+            content: "\201C";
+            font-size: 6rem;
+            position: absolute;
+            left: 0;
+            font-family: 'Times New Roman', Times, serif;
+        }
+    }
 }

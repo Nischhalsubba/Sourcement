@@ -19,11 +19,14 @@ $color-lightgrey: #FAFAFA;
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
-$font__main:'Roboto', sans-serif;
-$font__secondary:'Open Sans', sans-serif;
+$font__main:'Roboto',
+sans-serif;
+$font__secondary:'Open Sans',
+sans-serif;
 
 $font__heading:"https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&display=swap";
 $font__content: "https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap";
+$font__fancy: "https://fonts.googleapis.com/css?family=Tangerine&display=swap";
 $font__line-height-body: 2;
 $font__line-height-pre:2.5;
 
