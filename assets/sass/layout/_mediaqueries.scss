@@ -238,20 +238,21 @@
 
     // About us page
     .aboutus .container .aboutus-banner {
-        grid-template-columns: 100% !important;
+        grid-template-columns: 100%;
     }
 
     .detail .detail-content {
-        grid-template-columns: 1fr 1fr !important;
+        // grid-template-columns: 1fr 1fr !important;
+        grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
     }
 
     .aboutus .container .aboutus-banner .sidebar img {
-        width: 100% !important;
+        width: 100%;
     }
 
     .detail .detail-content div {
-        padding: 1rem 3rem !important;
+        padding: 1rem 3rem;
     }
 
     .showcase {

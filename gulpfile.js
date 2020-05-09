@@ -14,12 +14,12 @@ const postcss = require('gulp-postcss');
 var replace = require('gulp-replace');
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
-const uglify = require('gulp-uglify');
+const uglify = require('gulp-uglify-es');
 const babel = require('gulp-babel');
 // File path variables
 const files = {
     scssPath: './assets/sass/**/*.scss',
-    jsPath: ['./assets/js/tabs.js','./assets/js/model.js','./assets/js/custom.js']
+    jsPath: ['./assets/js/tabs.js', './assets/js/model.js', './assets/js/custom.js']
 };
 
 const vendorFiles = ['./node_modules/@glidejs/glide/dist/glide.min.js', './node_modules/particles.js/particles.js'];
@@ -38,9 +38,7 @@ function scssTask() {
 function jsTask() {
     return src(files.jsPath)
         .pipe(concat('app.js'))
-        // .pipe(babel({
-        //     presets: ['@babel/env']
-        // }))
+        // .pipe(babel())
         // .pipe(uglify())
         .pipe(dest('./js/'));
 }

@@ -221,7 +221,7 @@ small {
 }
 
 .displayNone {
-    display: none !important;
+    //display: none !important;
 }
 
 pre {
@@ -229,7 +229,8 @@ pre {
 }
 
 blockquote {
-position: relative;
+    position: relative;
+
     &::before {
         &::before {
             content: "\201C";
