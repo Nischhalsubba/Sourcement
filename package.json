@@ -1,8 +1,31 @@
 {
-  "name": "Tarrif resource management",
+  "name": "sourcement-ui",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
+  "description": "Static frontend concept for a tariff resource-management platform, built with SCSS, Gulp, Glide.js, and vanilla JavaScript.",
+  "author": "Nischhal Raj Subba",
+  "license": "MIT",
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build",
+    "watch": "gulp watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nischhalsubba/Sourcement.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Nischhalsubba/Sourcement/issues"
+  },
+  "homepage": "https://nischhalsubba.github.io/Sourcement/",
+  "keywords": [
+    "resource-management",
+    "tariff",
+    "scss",
+    "gulp",
+    "static-site",
+    "ui-concept"
+  ],
   "dependencies": {
     "@glidejs/glide": "^3.3.0"
   },
@@ -21,21 +44,5 @@
     "gulp-uglify": "^3.0.2",
     "particles.js": "^2.0.0",
     "slideout": "^1.0.1"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/Nischhalsubba/sassUtilities.git"
-  },
-  "keywords": [
-    "scssUtilities"
-  ],
-  "author": "Nischhal Raj Subba",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Nischhalsubba/sassUtilities/issues"
-  },
-  "homepage": "https://github.com/Nischhalsubba/sassUtilities#readme"
+  }
 }
