@@ -1,3 +1,4 @@
 lock=success
+auditfix=success
 install=success
 build=success

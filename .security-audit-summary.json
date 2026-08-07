@@ -1,32 +1,11 @@
 {
   "counts": {
     "info": 0,
-    "low": 2,
+    "low": 0,
     "moderate": 0,
-    "high": 2,
+    "high": 0,
     "critical": 0,
-    "total": 4
+    "total": 0
   },
-  "findings": [
-    {
-      "name": "acorn",
-      "severity": "high",
-      "direct": false,
-      "range": "5.5.0 - 5.7.3",
-      "via": [
-        "Regular Expression Denial of Service in Acorn"
-      ],
-      "fixAvailable": true
-    },
-    {
-      "name": "decode-uri-component",
-      "severity": "high",
-      "direct": false,
-      "range": "<0.2.1",
-      "via": [
-        "decode-uri-component vulnerable to Denial of Service (DoS)"
-      ],
-      "fixAvailable": true
-    }
-  ]
+  "findings": []
 }
