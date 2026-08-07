@@ -1,0 +1,113 @@
+
+> sourcement-ui@1.0.0 build
+> gulp build
+
+[04:31:51] Using gulpfile ~/work/Sourcement/Sourcement/gulpfile.js
+[04:31:51] Starting 'build'...
+[04:31:51] Starting 'scssTask'...
+[04:31:51] Starting 'jsTask'...
+[04:31:51] Starting 'jsVendorTask'...
+DEPRECATION WARNING [legacy-js-api]: The legacy JS API is deprecated and will be removed in Dart Sass 2.0.0.
+
+More info: https://sass-lang.com/d/legacy-js-api
+
+DEPRECATION WARNING [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ╷
+4 │ @import "./helper/varaibles";
+  │         ^^^^^^^^^^^^^^^^^^^^
+  ╵
+    assets/sass/style.scss 4:9  root stylesheet
+
+DEPRECATION WARNING [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ╷
+5 │ @import "./helper/mixins";
+  │         ^^^^^^^^^^^^^^^^^
+  ╵
+    assets/sass/style.scss 5:9  root stylesheet
+
+DEPRECATION WARNING [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ╷
+7 │ @import "../../node_modules/@glidejs/glide/src/assets/sass/glide.core.scss";
+  │         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  ╵
+    assets/sass/style.scss 7:9  root stylesheet
+
+DEPRECATION WARNING [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ╷
+8 │ @import "../../node_modules/@glidejs/glide/src/assets/sass/glide.theme.scss";
+  │         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  ╵
+    assets/sass/style.scss 8:9  root stylesheet
+
+DEPRECATION WARNING [import]: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+13 │ @import "./base/base";
+   │         ^^^^^^^^^^^^^
+   ╵
+    assets/sass/style.scss 13:9  root stylesheet
+
+DEPRECATION WARNING [global-builtin]: Global built-in functions are deprecated and will be removed in Dart Sass 3.0.0.
+Use color.adjust instead.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+   ╷
+32 │                             color: darken($color-grey, 20%);
+   │                                    ^^^^^^^^^^^^^^^^^^^^^^^^
+   ╵
+    assets/sass/layout/_footer.scss 32:36  @import
+    assets/sass/style.scss 49:9            root stylesheet
+
+DEPRECATION WARNING [color-functions]: darken() is deprecated. Suggestions:
+
+color.scale($color, $lightness: -25%)
+color.adjust($color, $lightness: -20%)
+
+More info: https://sass-lang.com/d/color-functions
+
+   ╷
+32 │                             color: darken($color-grey, 20%);
+   │                                    ^^^^^^^^^^^^^^^^^^^^^^^^
+   ╵
+    assets/sass/layout/_footer.scss 32:36  @import
+    assets/sass/style.scss 49:9            root stylesheet
+
+DEPRECATION WARNING [slash-div]: Using / for division outside of calc() is deprecated and will be removed in Dart Sass 2.0.0.
+
+Recommendation: math.div($size, 10) or calc($size / 10)
+
+More info and automated migrator: https://sass-lang.com/d/slash-div
+
+  ╷
+4 │     font-size: $size/10 + rem;
+  │                ^^^^^^^^
+  ╵
+    assets/sass/helper/_mixins.scss 4:16  font-size()
+    assets/sass/pages/_home.scss 51:21    @import
+    assets/sass/pages/_pages.scss 4:9     @import
+    assets/sass/style.scss 54:9           root stylesheet
+
+WARNING: 21 repetitive deprecation warnings omitted.
+
+Browserslist: caniuse-lite is outdated. Please run next command `npm update`
+[04:31:51] Finished 'jsVendorTask' after 430 ms
+[04:31:51] Finished 'jsTask' after 434 ms
+[04:31:52] Finished 'scssTask' after 791 ms
+[04:31:52] Starting 'cacheBustTask'...
+[04:31:52] Finished 'cacheBustTask' after 10 ms
+[04:31:52] Finished 'build' after 803 ms

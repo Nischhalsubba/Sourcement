@@ -1,0 +1,3 @@
+lock=success
+install=success
+build=success
