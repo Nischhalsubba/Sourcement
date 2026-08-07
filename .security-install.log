@@ -1,0 +1,106 @@
+npm WARN old lockfile 
+npm WARN old lockfile The package-lock.json file was created with an old version of npm,
+npm WARN old lockfile so supplemental metadata must be fetched from the registry.
+npm WARN old lockfile 
+npm WARN old lockfile This is a one-time fix-up, please be patient...
+npm WARN old lockfile 
+npm WARN deprecated urix@0.1.0: Please see https://github.com/lydell/urix#deprecated
+npm WARN deprecated stable@0.1.8: Modern JS already guarantees Array#sort() is a stable sort, so this library is deprecated. See the compatibility table on MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#browser_compatibility
+npm WARN deprecated uuid@3.3.2: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
+npm WARN deprecated source-map-url@0.4.0: See https://github.com/lydell/source-map-url#deprecated
+npm WARN deprecated rimraf@2.6.3: Rimraf versions prior to v4 are no longer supported
+npm WARN deprecated resolve-url@0.2.1: https://github.com/lydell/resolve-url#deprecated
+npm WARN deprecated q@1.5.1: You or someone you depend on is using Q, the JavaScript Promise library that gave JavaScript developers strong feelings about promises. They can almost certainly migrate to the native JavaScript promise now. Thank you literally everyone for joining me in this bet against the odds. Be excellent to each other.
+npm WARN deprecated 
+npm WARN deprecated (For a CapTP with native promises, see @endo/eventual-send and @endo/captp)
+npm WARN deprecated source-map-resolve@0.5.2: See https://github.com/lydell/source-map-resolve#deprecated
+npm WARN deprecated osenv@0.1.5: This package is no longer supported.
+npm WARN deprecated npmlog@4.1.2: This package is no longer supported.
+npm WARN deprecated request@2.88.0: request has been deprecated, see https://github.com/request/request/issues/3142
+npm WARN deprecated ini@1.3.5: Please update to ini >=1.3.6 to avoid a prototype pollution issue
+npm WARN deprecated is-data-descriptor@0.1.4: Please upgrade to v0.1.5
+npm WARN deprecated mkdirp@0.5.1: Legacy versions of mkdirp are no longer supported. Please update to mkdirp 1.x. (Note that the API surface has changed to use Promises in 1.x.)
+npm WARN deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+npm WARN deprecated is-accessor-descriptor@0.1.6: Please upgrade to v0.1.7
+npm WARN deprecated har-validator@5.1.3: this library is no longer supported
+npm WARN deprecated glob@7.1.4: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+npm WARN deprecated gauge@2.7.4: This package is no longer supported.
+npm WARN deprecated fstream@1.0.12: This package is no longer supported.
+npm WARN deprecated are-we-there-yet@1.1.5: This package is no longer supported.
+npm WARN deprecated is-data-descriptor@1.0.0: Please upgrade to v1.0.1
+npm WARN deprecated is-accessor-descriptor@1.0.0: Please upgrade to v1.0.1
+npm WARN deprecated is-accessor-descriptor@1.0.0: Please upgrade to v1.0.1
+npm WARN deprecated is-data-descriptor@1.0.0: Please upgrade to v1.0.1
+npm WARN deprecated is-accessor-descriptor@1.0.0: Please upgrade to v1.0.1
+npm WARN deprecated is-data-descriptor@1.0.0: Please upgrade to v1.0.1
+npm WARN deprecated is-data-descriptor@1.0.0: Please upgrade to v1.0.1
+npm WARN deprecated is-accessor-descriptor@1.0.0: Please upgrade to v1.0.1
+npm WARN deprecated debug@3.2.6: Debug versions >=3.2.0 <3.2.7 || >=4 <4.3.1 have a low-severity ReDos regression when used in a Node.js environment. It is recommended you upgrade to 3.2.7 or 4.3.1. (https://github.com/visionmedia/debug/issues/797)
+npm WARN deprecated svgo@1.2.2: This SVGO version is no longer supported. Upgrade to v2.x.x.
+npm WARN deprecated tar@2.2.2: Old versions of tar are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+npm WARN deprecated node-sass@4.12.0: Node Sass is no longer supported. Please use `sass` or `sass-embedded` instead.
+npm WARN deprecated core-js@2.6.9: core-js@<3.23.3 is no longer maintained and not recommended for usage due to the number of issues. Because of the V8 engine whims, feature detection in old core-js versions could cause a slowdown up to 100x even if nothing is polyfilled. Some versions have web compatibility issues. Please, upgrade your dependencies to the actual version of core-js.
+npm ERR! code 1
+npm ERR! path /home/runner/work/Sourcement/Sourcement/node_modules/node-sass
+npm ERR! command failed
+npm ERR! command sh -c -- node scripts/build.js
+npm ERR! Building: /opt/hostedtoolcache/node/14.21.3/x64/bin/node /home/runner/work/Sourcement/Sourcement/node_modules/node-gyp/bin/node-gyp.js rebuild --verbose --libsass_ext= --libsass_cflags= --libsass_ldflags= --libsass_library=
+npm ERR! gyp info it worked if it ends with ok
+npm ERR! gyp verb cli [
+npm ERR! gyp verb cli   '/opt/hostedtoolcache/node/14.21.3/x64/bin/node',
+npm ERR! gyp verb cli   '/home/runner/work/Sourcement/Sourcement/node_modules/node-gyp/bin/node-gyp.js',
+npm ERR! gyp verb cli   'rebuild',
+npm ERR! gyp verb cli   '--verbose',
+npm ERR! gyp verb cli   '--libsass_ext=',
+npm ERR! gyp verb cli   '--libsass_cflags=',
+npm ERR! gyp verb cli   '--libsass_ldflags=',
+npm ERR! gyp verb cli   '--libsass_library='
+npm ERR! gyp verb cli ]
+npm ERR! gyp info using node-gyp@3.8.0
+npm ERR! gyp info using node@14.21.3 | linux | x64
+npm ERR! gyp verb command rebuild []
+npm ERR! gyp verb command clean []
+npm ERR! gyp verb clean removing "build" directory
+npm ERR! gyp verb command configure []
+npm ERR! gyp verb check python checking for Python executable "python2" in the PATH
+npm ERR! gyp verb `which` failed Error: not found: python2
+npm ERR! gyp verb `which` failed     at getNotFoundError (/home/runner/work/Sourcement/Sourcement/node_modules/which/which.js:13:12)
+npm ERR! gyp verb `which` failed     at F (/home/runner/work/Sourcement/Sourcement/node_modules/which/which.js:68:19)
+npm ERR! gyp verb `which` failed     at E (/home/runner/work/Sourcement/Sourcement/node_modules/which/which.js:80:29)
+npm ERR! gyp verb `which` failed     at /home/runner/work/Sourcement/Sourcement/node_modules/which/which.js:89:16
+npm ERR! gyp verb `which` failed     at /home/runner/work/Sourcement/Sourcement/node_modules/isexe/index.js:42:5
+npm ERR! gyp verb `which` failed     at /home/runner/work/Sourcement/Sourcement/node_modules/isexe/mode.js:8:5
+npm ERR! gyp verb `which` failed     at FSReqCallback.oncomplete (fs.js:192:21)
+npm ERR! gyp verb `which` failed  python2 Error: not found: python2
+npm ERR! gyp verb `which` failed     at getNotFoundError (/home/runner/work/Sourcement/Sourcement/node_modules/which/which.js:13:12)
+npm ERR! gyp verb `which` failed     at F (/home/runner/work/Sourcement/Sourcement/node_modules/which/which.js:68:19)
+npm ERR! gyp verb `which` failed     at E (/home/runner/work/Sourcement/Sourcement/node_modules/which/which.js:80:29)
+npm ERR! gyp verb `which` failed     at /home/runner/work/Sourcement/Sourcement/node_modules/which/which.js:89:16
+npm ERR! gyp verb `which` failed     at /home/runner/work/Sourcement/Sourcement/node_modules/isexe/index.js:42:5
+npm ERR! gyp verb `which` failed     at /home/runner/work/Sourcement/Sourcement/node_modules/isexe/mode.js:8:5
+npm ERR! gyp verb `which` failed     at FSReqCallback.oncomplete (fs.js:192:21) {
+npm ERR! gyp verb `which` failed   code: 'ENOENT'
+npm ERR! gyp verb `which` failed }
+npm ERR! gyp verb check python checking for Python executable "python" in the PATH
+npm ERR! gyp verb `which` succeeded python /usr/bin/python
+npm ERR! gyp ERR! configure error 
+npm ERR! gyp ERR! stack Error: Command failed: /usr/bin/python -c import sys; print "%s.%s.%s" % sys.version_info[:3];
+npm ERR! gyp ERR! stack   File "<string>", line 1
+npm ERR! gyp ERR! stack     import sys; print "%s.%s.%s" % sys.version_info[:3];
+npm ERR! gyp ERR! stack                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+npm ERR! gyp ERR! stack SyntaxError: Missing parentheses in call to 'print'. Did you mean print(...)?
+npm ERR! gyp ERR! stack 
+npm ERR! gyp ERR! stack     at ChildProcess.exithandler (child_process.js:383:12)
+npm ERR! gyp ERR! stack     at ChildProcess.emit (events.js:400:28)
+npm ERR! gyp ERR! stack     at maybeClose (internal/child_process.js:1088:16)
+npm ERR! gyp ERR! stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:296:5)
+npm ERR! gyp ERR! System Linux 6.17.0-1020-azure
+npm ERR! gyp ERR! command "/opt/hostedtoolcache/node/14.21.3/x64/bin/node" "/home/runner/work/Sourcement/Sourcement/node_modules/node-gyp/bin/node-gyp.js" "rebuild" "--verbose" "--libsass_ext=" "--libsass_cflags=" "--libsass_ldflags=" "--libsass_library="
+npm ERR! gyp ERR! cwd /home/runner/work/Sourcement/Sourcement/node_modules/node-sass
+npm ERR! gyp ERR! node -v v14.21.3
+npm ERR! gyp ERR! node-gyp -v v3.8.0
+npm ERR! gyp ERR! not ok 
+npm ERR! Build failed with error code: 1
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/runner/.npm/_logs/2026-08-07T04_29_00_618Z-debug-0.log
