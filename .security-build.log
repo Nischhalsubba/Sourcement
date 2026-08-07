@@ -2,11 +2,11 @@
 > sourcement-ui@1.0.0 build
 > gulp build
 
-[04:31:51] Using gulpfile ~/work/Sourcement/Sourcement/gulpfile.js
-[04:31:51] Starting 'build'...
-[04:31:51] Starting 'scssTask'...
-[04:31:51] Starting 'jsTask'...
-[04:31:51] Starting 'jsVendorTask'...
+[04:35:58] Using gulpfile ~/work/Sourcement/Sourcement/gulpfile.js
+[04:35:58] Starting 'build'...
+[04:35:58] Starting 'scssTask'...
+[04:35:58] Starting 'jsTask'...
+[04:35:58] Starting 'jsVendorTask'...
 DEPRECATION WARNING [legacy-js-api]: The legacy JS API is deprecated and will be removed in Dart Sass 2.0.0.
 
 More info: https://sass-lang.com/d/legacy-js-api
@@ -104,10 +104,9 @@ More info and automated migrator: https://sass-lang.com/d/slash-div
 
 WARNING: 21 repetitive deprecation warnings omitted.
 
-Browserslist: caniuse-lite is outdated. Please run next command `npm update`
-[04:31:51] Finished 'jsVendorTask' after 430 ms
-[04:31:51] Finished 'jsTask' after 434 ms
-[04:31:52] Finished 'scssTask' after 791 ms
-[04:31:52] Starting 'cacheBustTask'...
-[04:31:52] Finished 'cacheBustTask' after 10 ms
-[04:31:52] Finished 'build' after 803 ms
+[04:35:59] Finished 'jsVendorTask' after 488 ms
+[04:35:59] Finished 'jsTask' after 491 ms
+[04:35:59] Finished 'scssTask' after 498 ms
+[04:35:59] Starting 'cacheBustTask'...
+[04:35:59] Finished 'cacheBustTask' after 131 ms
+[04:35:59] Finished 'build' after 631 ms
