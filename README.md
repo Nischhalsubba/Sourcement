@@ -4,27 +4,27 @@
 
 # Sourcement
 
-**Branch-aware technical guide for [`master`](https://github.com/Nischhalsubba/Sourcement/tree/master)**
+**Branch-aware technical guide for [`agent/security-sass-migration`](https://github.com/Nischhalsubba/Sourcement/tree/agent/security-sass-migration)**
 
-<p><img alt="branch: master" src="https://img.shields.io/static/v1?label=&message=branch%3A%20master&color=5965F2&style=flat-square"> <img alt="Sass" src="https://img.shields.io/static/v1?label=&message=Sass&color=24292F&style=flat-square"> <img alt="JavaScript" src="https://img.shields.io/static/v1?label=&message=JavaScript&color=24292F&style=flat-square"> <img alt="HTML" src="https://img.shields.io/static/v1?label=&message=HTML&color=24292F&style=flat-square"> <img alt="CSS" src="https://img.shields.io/static/v1?label=&message=CSS&color=24292F&style=flat-square"> <img alt="docs: branch-aware" src="https://img.shields.io/static/v1?label=&message=docs%3A%20branch-aware&color=8250DF&style=flat-square"></p>
+<p><img alt="branch: agent/security-sass-migration" src="https://img.shields.io/static/v1?label=&message=branch%3A%20agent%2Fsecurity-sass-migration&color=5965F2&style=flat-square"> <img alt="Sass" src="https://img.shields.io/static/v1?label=&message=Sass&color=24292F&style=flat-square"> <img alt="JavaScript" src="https://img.shields.io/static/v1?label=&message=JavaScript&color=24292F&style=flat-square"> <img alt="HTML" src="https://img.shields.io/static/v1?label=&message=HTML&color=24292F&style=flat-square"> <img alt="CSS" src="https://img.shields.io/static/v1?label=&message=CSS&color=24292F&style=flat-square"> <img alt="docs: branch-aware" src="https://img.shields.io/static/v1?label=&message=docs%3A%20branch-aware&color=8250DF&style=flat-square"></p>
 
 <p>
-  <a href="https://github.com/Nischhalsubba/Sourcement/tree/master"><strong>Browse source</strong></a> ·
+  <a href="https://github.com/Nischhalsubba/Sourcement/tree/agent/security-sass-migration"><strong>Browse source</strong></a> ·
   <a href="https://github.com/Nischhalsubba/Sourcement/issues"><strong>Issues</strong></a> ·
-  <a href="https://github.com/Nischhalsubba/Sourcement/codespaces/new?ref=master"><strong>Open in Codespaces</strong></a>
+  <a href="https://github.com/Nischhalsubba/Sourcement/codespaces/new?ref=agent%2Fsecurity-sass-migration"><strong>Open in Codespaces</strong></a>
 </p>
 
 </div>
 
 > [!IMPORTANT]
-> This guide is generated from the files actually present on `master`. It links to detected source paths, preserves project-authored notes, and avoids claiming components that were not found.
+> This guide is generated from the files actually present on `agent/security-sass-migration`. It links to detected source paths, preserves project-authored notes, and avoids claiming components that were not found.
 
 ## At a glance
 
 | Item | Detected value |
 |---|---|
 | Purpose | Static frontend concept for a tariff resource-management platform, built with SCSS, Gulp, Glide.js, and vanilla JavaScript. |
-| Branch role | Default branch |
+| Branch role | Compared with `master` |
 | Stack | Sass, JavaScript, HTML, CSS |
 | Manifests | package.json |
 | Prerequisites | Node.js |
@@ -33,7 +33,7 @@
 
 ## Branch scope
 
-This is the repository's default branch.
+No branch-specific file differences were detected against the default branch at generation time.
 
 
 
@@ -55,7 +55,7 @@ npm run build
 
 ```mermaid
 flowchart TD
-    ROOT["Sourcement / master"]
+    ROOT["Sourcement / agent/security-sass-migration"]
     ROOT --> P0[".github/"]
     ROOT --> P1["assets/"]
     ROOT --> P2["docs/"]
@@ -75,8 +75,8 @@ flowchart TD
 
 | Responsibility | Detected source paths |
 |---|---|
-| Documentation | [`docs`](https://github.com/Nischhalsubba/Sourcement/tree/master/docs) |
-| Delivery | [`.github`](https://github.com/Nischhalsubba/Sourcement/tree/master/.github) |
+| Documentation | [`docs`](https://github.com/Nischhalsubba/Sourcement/tree/agent/security-sass-migration/docs) |
+| Delivery | [`.github`](https://github.com/Nischhalsubba/Sourcement/tree/agent/security-sass-migration/.github) |
 
 ## Website or application map
 
@@ -139,7 +139,7 @@ Define useful logs, metrics, traces, alerts, and rollback signals for production
 
 ```mermaid
 flowchart LR
-    CHANGE["Change on master"] --> CHECK["Tests and quality checks"]
+    CHANGE["Change on agent/security-sass-migration"] --> CHECK["Tests and quality checks"]
     CHECK --> REVIEW["Review architecture and documentation impact"]
     REVIEW --> BUILD["Build or package"]
     BUILD --> DEPLOY["Deploy or release"]
@@ -148,7 +148,7 @@ flowchart LR
 
 ### Automation detected
 
-- [`.github/workflows/apply-interactive-readme.yml`](https://github.com/Nischhalsubba/Sourcement/blob/master/.github/workflows/apply-interactive-readme.yml)
+- [`.github/workflows/apply-interactive-readme.yml`](https://github.com/Nischhalsubba/Sourcement/blob/agent/security-sass-migration/.github/workflows/apply-interactive-readme.yml)
 
 ## Contribution flow
 
@@ -173,7 +173,7 @@ flowchart LR
 | Topic | Source |
 |---|---|
 | Repository | [`Nischhalsubba/Sourcement`](https://github.com/Nischhalsubba/Sourcement) |
-| Branch | [`master`](https://github.com/Nischhalsubba/Sourcement/tree/master) |
+| Branch | [`agent/security-sass-migration`](https://github.com/Nischhalsubba/Sourcement/tree/agent/security-sass-migration) |
 | Ownership | No CODEOWNERS file detected |
 | Contributing | Use the contribution flow above |
 | Support | [Open or review issues](https://github.com/Nischhalsubba/Sourcement/issues) |
