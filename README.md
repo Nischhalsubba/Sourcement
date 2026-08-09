@@ -38,6 +38,7 @@ This branch differs from the default branch in the following detected paths:
 - [`.github/workflows/security-audit.yml`](https://github.com/Nischhalsubba/Sourcement/blob/agent/security-audit/.github/workflows/security-audit.yml)
 - [`.security-audit-status.txt`](https://github.com/Nischhalsubba/Sourcement/blob/agent/security-audit/.security-audit-status.txt)
 - [`.security-install.log`](https://github.com/Nischhalsubba/Sourcement/blob/agent/security-audit/.security-install.log)
+- [`README.md`](https://github.com/Nischhalsubba/Sourcement/blob/agent/security-audit/README.md)
 
 ## Quick start
 
