@@ -51,12 +51,17 @@ flowchart TD
 
 ## Getting started
 
+Sourcement is a static Gulp/SCSS frontend. Its `package.json` and `package-lock.json` are in the repository root.
+
 ```bash
 git clone https://github.com/Nischhalsubba/Sourcement.git
 cd Sourcement
+npm ci
+npm start
 ```
 
-Use the manifests and lockfiles in the repository to determine the current runtime and supported commands.
+Use `npm run build` to generate production assets, or `npm run watch` to rebuild as source files change. The static entry point is `index.html`.
+
 
 ## Design & accessibility
 
