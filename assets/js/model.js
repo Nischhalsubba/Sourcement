@@ -25,7 +25,7 @@ if (modal && closeButton) {
         if (
             embedUrl?.protocol === 'https:' &&
             ['www.youtube.com', 'www.youtube-nocookie.com'].includes(embedUrl.hostname) &&
-            /^\\/embed\\/[A-Za-z0-9_-]+$/.test(embedUrl.pathname)
+            embedUrl.pathname.startsWith('/embed/') && /^[A-Za-z0-9_-]+$/.test(embedUrl.pathname.slice(7))
         ) {
             const iframe = document.createElement('iframe');
             iframe.src = embedUrl.href;
