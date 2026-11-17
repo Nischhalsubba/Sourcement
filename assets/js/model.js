@@ -5,6 +5,13 @@ const closeButton = document.querySelector('#btn_close');
 if (modal && closeButton) {
     const body = modal.querySelector('.model_content p');
     const originalText = body?.textContent ?? '';
+    let previousFocus = null;
+
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-label', 'Product demonstration');
+    closeButton.setAttribute('role', 'button');
+    closeButton.setAttribute('tabindex', '0');
+    closeButton.setAttribute('aria-label', 'Close product demonstration');
 
     function setModalContent(raw) {
         if (!body) return;
@@ -44,17 +51,26 @@ if (modal && closeButton) {
     function closeModal() {
         modal.style.display = 'none';
         if (body) body.textContent = originalText;
+        previousFocus?.focus();
     }
 
     modelOpeners.forEach((opener) => {
         opener.addEventListener('click', (event) => {
             event.preventDefault();
+            previousFocus = document.activeElement;
             setModalContent(opener.getAttribute('data-content'));
             modal.style.display = 'block';
+            closeButton.focus();
         });
     });
 
     closeButton.addEventListener('click', closeModal);
+    closeButton.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            closeModal();
+        }
+    });
     modal.addEventListener('click', (event) => {
         if (event.target === modal) closeModal();
     });
