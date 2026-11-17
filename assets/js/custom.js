@@ -19,10 +19,18 @@ function cross() {
 }
 
 function menuShow() {
-    var menuFull = document.querySelector('header ul')
-    menuFull.classList.toggle('clicked')
-
+    var menuFull = document.querySelector('header ul');
+    if (!menuFull || !Hamburger) return;
+    var expanded = menuFull.classList.toggle('clicked');
+    Hamburger.setAttribute('aria-expanded', String(expanded));
 }
+
+Hamburger?.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        Hamburger.click();
+    }
+});
 
 // Services tabs
 var tabsContainer = document.querySelectorAll('.tabs-container');
