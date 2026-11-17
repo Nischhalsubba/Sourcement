@@ -37,52 +37,35 @@ tabsContainer.forEach(tc => {
 
 
 
-if (window.innerWidth > 1200) {
-    console.log('suceess')
-    //Particles JS
-    var particlesMarkup = document.querySelector('#particles-js');
-    if (particlesMarkup) {
-        particlesJS.load('particles-js', './particles setting/particles-old.json', function () {
-            console.log('callback - particles.js config loaded');
-        });
-    }
+// Load a particle configuration only when the responsive mode changes.
+// Avoid restarting each canvas (and refetching JSON) on every resize event.
+let activeParticleMode = null;
 
-    var particlesMarkup2 = document.querySelector('#particles-js2');
-    if (particlesMarkup2) {
-        particlesJS.load('particles-js2', './particles setting/particlesjs-config.json', function () {
-            console.log('callback - particles.js config loaded');
-        });
+function updateParticlesForViewport() {
+    const particles = window.particlesJS;
+    if (!particles || typeof particles.load !== 'function') return;
+
+    const mode = window.innerWidth > 1200 ? 'desktop' : 'mobile';
+    if (mode === activeParticleMode) return;
+
+    const sources = mode === 'desktop'
+        ? [
+            ['particles-js', './particles setting/particles-old.json'],
+            ['particles-js2', './particles setting/particlesjs-config.json'],
+        ]
+        : [
+            ['particles-js', './particles setting/particles-old-mobile.json'],
+            ['particles-js2', './particles setting/particles-config-mobile.json'],
+        ];
+
+    for (const [id, source] of sources) {
+        if (document.getElementById(id)) particles.load(id, source);
     }
+    activeParticleMode = mode;
 }
 
-// Responsive Particles JS
-window.addEventListener('resize', (e) => {
-    checkOnResize();
-}, true);
-
-function checkOnResize() {
-    if (window.innerWidth > 1200) {
-        // console.log('suceess')
-        // Particles JS
-        particlesJS.load('particles-js', './particles setting/particles-old.json', function () {
-            console.log('callback - particles.js config loaded');
-        });
-
-        particlesJS.load('particles-js2', './particles setting/particlesjs-config.json', function () {
-            console.log('callback - particles.js config loaded');
-        });
-    } else {
-        particlesJS.load('particles-js', './particles setting/particles-old-mobile.json', function () {
-            console.log('callback - particles.js config loaded');
-        });
-
-        particlesJS.load('particles-js2', './particles setting/particles-config-mobile.json', function () {
-            console.log('callback - particles.js config loaded');
-        });
-    }
-}
-
-
+window.addEventListener('resize', updateParticlesForViewport, { passive: true });
+updateParticlesForViewport();
 
 // Glide JS
 var glideMarkup = document.querySelector('.slideshow .glide');
