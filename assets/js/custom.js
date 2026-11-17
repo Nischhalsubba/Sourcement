@@ -70,7 +70,7 @@ updateParticlesForViewport();
 // Glide JS
 var glideMarkup = document.querySelector('.slideshow .glide');
 if (glideMarkup) {
-    new Glide('.glide', {
+    new Glide('.slideshow .glide', {
         type: 'carousel',
         autoplay: 1500,
         perView: 5,
@@ -92,7 +92,7 @@ if (glideMarkup) {
 // Testimonial Glide JS
 var testimonialglideMarkup = document.querySelector('.testimonial .glide');
 if (testimonialglideMarkup) {
-    new Glide('.glide', {
+    new Glide('.testimonial .glide', {
         type: 'carousel',
         perView: '1',
         gap: 10
@@ -102,7 +102,7 @@ if (testimonialglideMarkup) {
 //Default carousel
 var defaultCarousel = document.querySelector('.carousel .glide')
 if (defaultCarousel) {
-    new Glide('.glide', {
+    new Glide('.carousel .glide', {
         type: 'carousel',
         autoplay: 1500,
         perView: 5,
