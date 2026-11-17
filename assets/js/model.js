@@ -1,55 +1,64 @@
-    const model_open = document.querySelectorAll('.model_open');
-    const model = document.querySelector('.model');
-    const btn_close = document.querySelector('#btn_close');
+const modelOpeners = document.querySelectorAll('.model_open');
+const modal = document.querySelector('.model');
+const closeButton = document.querySelector('#btn_close');
 
-if (model) {
-        
-    //var old_model_param={'title':document.querySelector(".model_content h2").innerHTML,'content':document.querySelector(".model_content p").innerHTML};
-    var old_model_param = {
-        'content': document.querySelector(".model_content p").innerHTML
-    };
+if (modal && closeButton) {
+    const body = modal.querySelector('.model_content p');
+    const originalText = body?.textContent ?? '';
 
-    model_open.forEach((m) => {
-        m.addEventListener('click', (e) => {
-            e.preventDefault();
-            var title = m.getAttribute('data-title');
-            var content = m.getAttribute('data-content');
+    function setModalContent(raw) {
+        if (!body) return;
 
-            showModel({
-                'title': title,
-                'content': content
-            });
-        })
+        const value = String(raw ?? '');
+        body.replaceChildren();
+
+        // Only the documented YouTube product demo may be embedded. Do not
+        // inject arbitrary HTML from data-content into the live document.
+        const candidate = new DOMParser().parseFromString(value, 'text/html').querySelector('iframe');
+        let embedUrl;
+        try {
+            embedUrl = new URL(candidate?.getAttribute('src') ?? '');
+        } catch {
+            embedUrl = null;
+        }
+
+        if (
+            embedUrl?.protocol === 'https:' &&
+            ['www.youtube.com', 'www.youtube-nocookie.com'].includes(embedUrl.hostname) &&
+            embedUrl.pathname.startsWith('/embed/') && /^[A-Za-z0-9_-]+$/.test(embedUrl.pathname.slice(7))
+        ) {
+            const iframe = document.createElement('iframe');
+            iframe.src = embedUrl.href;
+            iframe.title = 'Sourcement product demonstration';
+            iframe.width = '100%';
+            iframe.height = '100%';
+            iframe.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
+            iframe.allowFullscreen = true;
+            iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+            body.append(iframe);
+        } else {
+            body.textContent = value;
+        }
+    }
+
+    function closeModal() {
+        modal.style.display = 'none';
+        if (body) body.textContent = originalText;
+    }
+
+    modelOpeners.forEach((opener) => {
+        opener.addEventListener('click', (event) => {
+            event.preventDefault();
+            setModalContent(opener.getAttribute('data-content'));
+            modal.style.display = 'block';
+        });
     });
 
-    btn_close.addEventListener('click', () => {
-        hideModel();
+    closeButton.addEventListener('click', closeModal);
+    modal.addEventListener('click', (event) => {
+        if (event.target === modal) closeModal();
     });
-
-    model.addEventListener('click', (e) => {
-        if (e.target == model)
-            hideModel();
-    })
-
-
-    function showModel(model_params) {
-        setModelContent(model_params);
-        model.style.display = 'block';
-    }
-
-    function setModelContent(model_params) {
-        //const heading=document.querySelector(".model_content h2");
-        const content = document.querySelector(".model_content p");
-
-        //if(model_params.title)
-        //    heading.innerHTML=model_params.title;
-
-        if (model_params.content)
-            content.innerHTML = model_params.content;
-    }
-
-    function hideModel() {
-        setModelContent(old_model_param);
-        model.style.display = 'none';
-    }
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && modal.style.display === 'block') closeModal();
+    });
 }
