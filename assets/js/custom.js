@@ -1,18 +1,14 @@
-// Sticky Navbar
-window.onscroll = function () {
-    stickyNavbar()
-};
-
+// Sticky navbar: do not override unrelated scroll listeners.
 var navBar = document.querySelector('header');
-var sticky = navBar.offsetTop;
+var sticky = navBar?.offsetTop ?? 0;
 
 function stickyNavbar() {
-    if (window.pageYOffset > sticky) {
-        navBar.classList.add('sticky')
-    } else {
-        navBar.classList.remove('sticky');
-    }
+    if (!navBar) return;
+    navBar.classList.toggle('sticky', window.pageYOffset > sticky);
 }
+
+window.addEventListener('scroll', stickyNavbar, { passive: true });
+stickyNavbar();
 
 // Hamburger menu
 var Hamburger = document.querySelector('.hamburger');
