@@ -77,3 +77,7 @@ Public pages should use specific terminology that accurately explains what Sourc
 flowchart LR
     CHANGE["Product / content change"] --> IMPACT["Map affected states"] --> BUILD["Implement"] --> TEST["Test normal + edge paths"] --> ACCESS["UX / accessibility review"] --> PR["Pull request"]
 ```
+
+## Verification and review practice
+
+Use the [project-specific validation guide](docs/INTERACTION_RELEASE_QA.md) to document testing, limitations and rollback for future lessons or interface changes.
