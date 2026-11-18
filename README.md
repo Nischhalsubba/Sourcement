@@ -1,221 +1,79 @@
-<!-- interactive-readme-standard:start -->
-
 <div align="center">
 
 # Sourcement
 
-**Branch-aware technical guide for [`dependabot/npm_and_yarn/lodash-4.17.21`](https://github.com/Nischhalsubba/Sourcement/tree/dependabot/npm_and_yarn/lodash-4.17.21)**
+**The Sourcement web project, documented around its product experience, interface architecture, user flow, content structure, and maintainable implementation.**
 
-<p><img alt="branch: dependabot/npm_and_yarn/lodash-4.17.21" src="https://img.shields.io/static/v1?label=&message=branch%3A%20dependabot%2Fnpm_and_yarn%2Flodash-4.17.21&color=5965F2&style=flat-square"> <img alt="Sass" src="https://img.shields.io/static/v1?label=&message=Sass&color=24292F&style=flat-square"> <img alt="JavaScript" src="https://img.shields.io/static/v1?label=&message=JavaScript&color=24292F&style=flat-square"> <img alt="HTML" src="https://img.shields.io/static/v1?label=&message=HTML&color=24292F&style=flat-square"> <img alt="CSS" src="https://img.shields.io/static/v1?label=&message=CSS&color=24292F&style=flat-square"> <img alt="docs: branch-aware" src="https://img.shields.io/static/v1?label=&message=docs%3A%20branch-aware&color=8250DF&style=flat-square"></p>
+![Top language](https://img.shields.io/github/languages/top/Nischhalsubba/Sourcement?style=flat-square)
+![Last commit](https://img.shields.io/github/last-commit/Nischhalsubba/Sourcement?style=flat-square)
+![Repo size](https://img.shields.io/github/repo-size/Nischhalsubba/Sourcement?style=flat-square)
 
-<p>
-  <a href="https://github.com/Nischhalsubba/Sourcement/tree/dependabot/npm_and_yarn/lodash-4.17.21"><strong>Browse source</strong></a> ·
-  <a href="https://github.com/Nischhalsubba/Sourcement/issues"><strong>Issues</strong></a> ·
-  <a href="https://github.com/Nischhalsubba/Sourcement/codespaces/new?ref=dependabot%2Fnpm_and_yarn%2Flodash-4.17.21"><strong>Open in Codespaces</strong></a>
-</p>
+[Browse source](https://github.com/Nischhalsubba/Sourcement/tree/master) · [Issues](https://github.com/Nischhalsubba/Sourcement/issues)
 
 </div>
 
-> [!IMPORTANT]
-> This guide is generated from the files actually present on `dependabot/npm_and_yarn/lodash-4.17.21`. It links to detected source paths, preserves project-authored notes, and avoids claiming components that were not found.
+## Overview
 
-## At a glance
+**Sourcement** is documented from the user journey outward: first explain what a person sees and does, then map that experience to interface state, application logic, data or services, and delivery. This keeps the README useful even to people who do not speak framework dialect.
 
-| Item | Detected value |
+<details open>
+<summary><strong>🏗️ Interactive product architecture</strong></summary>
+
+```mermaid
+flowchart LR
+    USER["User"] --> UI["Sourcement interface"]
+    CONTENT["Product / page content"] --> UI
+    UI --> STATE["Interaction state"]
+    STATE --> LOGIC["Application logic"]
+    LOGIC --> DATA["Data / services"]
+    DATA --> RESULT["Result / updated view"]
+    RESULT --> USER
+```
+
+</details>
+
+## User flow
+
+```mermaid
+flowchart TD
+    START["Enter Sourcement"] --> ORIENT["Understand available task"] --> ACTION["Take primary action"] --> CHECK["Validate / process"] --> RESULT["Show clear result"] --> NEXT{"Continue?"}
+    NEXT -->|Yes| ACTION
+```
+
+## Audience guide
+
+| Audience | Focus |
 |---|---|
-| Purpose | A Sass project documented from the current branch structure and manifests. |
-| Branch role | Compared with `master` |
-| Stack | Sass, JavaScript, HTML, CSS |
-| Manifests | package.json |
-| Prerequisites | Node.js |
-| Delivery | No conventional deployment configuration detected |
-| License | No license file detected |
+| Users / stakeholders | Purpose, available workflows and outcomes |
+| Developers | Structure, state, logic, data/services and tests |
+| Designers | Hierarchy, responsive behavior, edge states and accessibility |
+| Content owners | Accurate terminology, links, metadata and public claims |
 
-## Branch scope
+## Getting started
 
-This branch differs from the default branch in the following detected paths:
-
-- [`README.md`](https://github.com/Nischhalsubba/Sourcement/blob/dependabot/npm_and_yarn/lodash-4.17.21/README.md)
-- [`package-lock.json`](https://github.com/Nischhalsubba/Sourcement/blob/dependabot/npm_and_yarn/lodash-4.17.21/package-lock.json)
-
-## Quick start
+Sourcement is a static Gulp/SCSS frontend. Its `package.json` and `package-lock.json` are in the repository root.
 
 ```bash
-npm install
-npm run test
+git clone https://github.com/Nischhalsubba/Sourcement.git
+cd Sourcement
+npm ci
+npm start
 ```
 
-### Configuration surface
-
-- No committed environment example file was detected.
-
-> Never commit secrets, private keys, production credentials, customer data, or unredacted infrastructure details.
-
-## Repository map
-
-```mermaid
-flowchart TD
-    ROOT["Sourcement / dependabot/npm_and_yarn/lodash-4.17.21"]
-    ROOT --> P0["assets/"]
-    ROOT --> P1["js/"]
-    ROOT --> P2["particles setting/"]
-    ROOT --> P3[".gitignore"]
-    ROOT --> P4["aboutus.html"]
-    ROOT --> P5["gulpfile.js"]
-    ROOT --> P6["index.html"]
-    ROOT --> P7["kitchensink.html"]
-    ROOT --> P8["package-lock.json"]
-    ROOT --> P9["package.json"]
-    ROOT --> P10["style.css"]
-    ROOT --> P11["style.css.map"]
-```
-
-| Responsibility | Detected source paths |
-|---|---|
-| Project files | [`assets/`](https://github.com/Nischhalsubba/Sourcement/tree/dependabot/npm_and_yarn/lodash-4.17.21/assets/), [`js/`](https://github.com/Nischhalsubba/Sourcement/tree/dependabot/npm_and_yarn/lodash-4.17.21/js/), [`particles setting/`](https://github.com/Nischhalsubba/Sourcement/tree/dependabot/npm_and_yarn/lodash-4.17.21/particles%20setting/), [`.gitignore`](https://github.com/Nischhalsubba/Sourcement/blob/dependabot/npm_and_yarn/lodash-4.17.21/.gitignore), [`aboutus.html`](https://github.com/Nischhalsubba/Sourcement/blob/dependabot/npm_and_yarn/lodash-4.17.21/aboutus.html) |
-
-## Website or application map
-
-```mermaid
-flowchart TD
-    APP["Sourcement"]
-    APP --> SOURCE["No conventional route directory detected"]
-    SOURCE --> GUIDE["Use the repository and architecture maps below"]
-```
-
-## Architecture and responsibility flow
-
-```mermaid
-flowchart LR
-    USER["User / contributor"]
-    USER --> A0["Project files: assets/, js/, particles setting/, .gitignore, aboutus.html"]
-```
+Use `npm run build` to generate production assets, or `npm run watch` to rebuild as source files change. The static entry point is `index.html`.
 
 
+## Design & accessibility
 
-## Quality, security, and operations
+Keep tasks understandable, errors actionable, loading/empty/success states explicit, focus visible, layouts responsive, and destructive actions clearly distinguished. Document non-obvious workflow rules near the code or product documentation that owns them.
 
-<table>
-<tr>
-<td width="33%" valign="top">
+## SEO & discoverability
 
-### Quality
-
-- No conventional test directory was detected automatically.
-
-Detected commands:
-- `npm run test`
-
-</td>
-<td width="33%" valign="top">
-
-### Security
-
-- No dedicated security policy or automated dependency configuration was detected.
-
-Review authentication, authorization, input validation, dependency updates, secret handling, and failure recovery before release.
-
-</td>
-<td width="34%" valign="top">
-
-### Observability
-
-- No dedicated observability integration was detected automatically.
-
-Define useful logs, metrics, traces, alerts, and rollback signals for production-facing branches.
-
-</td>
-</tr>
-</table>
-
-## Delivery flow
-
-```mermaid
-flowchart LR
-    CHANGE["Change on dependabot/npm_and_yarn/lodash-4.17.21"] --> CHECK["Tests and quality checks"]
-    CHECK --> REVIEW["Review architecture and documentation impact"]
-    REVIEW --> BUILD["Build or package"]
-    BUILD --> DEPLOY["Deploy or release"]
-    DEPLOY --> VERIFY["Verify health and rollback readiness"]
-```
-
-### Automation detected
-
-- No GitHub Actions workflow files were detected.
+Public pages should use specific terminology that accurately explains what Sourcement does rather than generic keyword repetition. Maintain unique titles/descriptions, semantic headings, descriptive links, canonical URLs, meaningful image alternatives and social-preview metadata.
 
 ## Contribution flow
 
 ```mermaid
 flowchart LR
-    FORK["Create branch"] --> CHANGE["Make focused change"]
-    CHANGE --> TEST["Run relevant checks"]
-    TEST --> DOCS["Update README and diagrams"]
-    DOCS --> PR["Open pull request"]
-    PR --> REVIEW["Review and iterate"]
-    REVIEW --> MERGE["Merge when ready"]
+    CHANGE["Product / content change"] --> IMPACT["Map affected states"] --> BUILD["Implement"] --> TEST["Test normal + edge paths"] --> ACCESS["UX / accessibility review"] --> PR["Pull request"]
 ```
-
-- Keep changes focused and explain architectural consequences.
-- Run the checks relevant to the changed area.
-- Update diagrams whenever routes, modules, data models, authentication, jobs, or delivery paths change.
-- Add screenshots or recordings for visual behavior changes when useful.
-- Use issues for reproducible defects and pull requests for reviewable changes.
-
-## Ownership and support
-
-| Topic | Source |
-|---|---|
-| Repository | [`Nischhalsubba/Sourcement`](https://github.com/Nischhalsubba/Sourcement) |
-| Branch | [`dependabot/npm_and_yarn/lodash-4.17.21`](https://github.com/Nischhalsubba/Sourcement/tree/dependabot/npm_and_yarn/lodash-4.17.21) |
-| Ownership | No CODEOWNERS file detected |
-| Contributing | Use the contribution flow above |
-| Support | [Open or review issues](https://github.com/Nischhalsubba/Sourcement/issues) |
-| License | No license file detected |
-
-<details>
-<summary><strong>Documentation maintenance checklist</strong></summary>
-
-- [ ] Purpose and branch scope are accurate.
-- [ ] Setup and configuration commands still work.
-- [ ] Repository, application, API, data, authentication, job, and deployment diagrams match the code.
-- [ ] Tests, security controls, observability, and rollback behavior are documented.
-- [ ] Links point to real files on this branch.
-- [ ] No secrets or private operational details are exposed.
-
-</details>
-
-<!-- interactive-readme-standard:end -->
-
-<!-- project-authored-notes:start -->
-<details>
-<summary><strong>Project-authored notes preserved from this branch</strong></summary>
-
-![alt text](https://mir-cdn.behance.net/v1/rendition/project_modules/fs/0e876582396953.5d1c4612bd81a.png)
-
-# Sourcement
-
-Sourcement is a Resource Management Platform for Tarrif.
-
-# Technology Used
-
-  - Gulp for automation of the workflow.
-  - Glide.js for carousel on website.
-  - ES6 for javascript
-  - SCSS to make it Modular for future upgrade and Changes.
-
-# Key Features
-  - CSS Size under 20KB
-  - Javascript size (App.js-6KB),(Vendor.js-65KB)
-  - This layout doesn't rely on any 3rd party design framework.
-  - The layout doen't even rely on JQuery and all the javascript written or plugins used are ES6 based.
- 
-
-
-# Demo URL:
-https://nischhalsubba.github.io/Sourcement/
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
-
-</details>
-<!-- project-authored-notes:end -->
