@@ -1,77 +1,68 @@
-// Initailize Modules
+/*
+ * Build pipeline for the Sourcement static site.
+ * Compiles Sass, bundles the authored browser scripts in dependency order,
+ * copies vendor JavaScript, refreshes HTML cache-busting values, and watches
+ * maintained sources during local development.
+ */
 
-const {
-    src,
-    dest,
-    watch,
-    series,
-    parallel
-} = require('gulp');
-const autoprefixer = require('autoprefixer');
-const cssnano = require('cssnano');
-const concat = require('gulp-concat');
-const postcss = require('gulp-postcss');
-var replace = require('gulp-replace');
-const sass = require('gulp-sass');
-const sourcemaps = require('gulp-sourcemaps');
-const uglify = require('gulp-uglify');
-const babel = require('gulp-babel');
-// File path variables
+const { src, dest, watch, series, parallel } = require("gulp");
+const autoprefixer = require("autoprefixer");
+const cssnano = require("cssnano");
+const concat = require("gulp-concat");
+const postcss = require("gulp-postcss");
+const replace = require("gulp-replace");
+const sass = require("gulp-sass/legacy")(require("sass"));
+const sourcemaps = require("gulp-sourcemaps");
+
 const files = {
-    scssPath: './assets/sass/**/*.scss',
-    jsPath: ['./assets/js/tabs.js','./assets/js/model.js','./assets/js/custom.js']
+  scssPath: "./assets/sass/**/*.scss",
+  jsPath: ["./assets/js/tabs.js", "./assets/js/model.js", "./assets/js/custom.js"],
 };
 
-const vendorFiles = ['./node_modules/@glidejs/glide/dist/glide.min.js', './node_modules/particles.js/particles.js'];
+const vendorFiles = [
+  "./node_modules/@glidejs/glide/dist/glide.min.js",
+  "./node_modules/particles.js/particles.js",
+];
 
-// sass task
+/** Compiles and minifies the maintained Sass source into the root stylesheet. */
 function scssTask() {
-    return src(files.scssPath)
-        .pipe(sourcemaps.init())
-        .pipe(sass())
-        .pipe(postcss([autoprefixer(), cssnano()]))
-        .pipe(sourcemaps.write('.'))
-        .pipe(dest('./'));
+  return src(files.scssPath)
+    .pipe(sourcemaps.init())
+    .pipe(sass())
+    .pipe(postcss([autoprefixer(), cssnano()]))
+    .pipe(sourcemaps.write("."))
+    .pipe(dest("./"));
 }
 
-// JS task
+/** Concatenates the authored browser scripts in their required dependency order. */
 function jsTask() {
-    return src(files.jsPath)
-        .pipe(concat('app.js'))
-        // .pipe(babel({
-        //     presets: ['@babel/env']
-        // }))
-        // .pipe(uglify())
-        .pipe(dest('./js/'));
+  return src(files.jsPath).pipe(concat("app.js")).pipe(dest("./js/"));
 }
 
+/** Concatenates third-party Glide and particles.js distributions into vendor.js. */
 function jsVendorTask() {
-    return src(vendorFiles)
-        .pipe(concat('vendor.js'))
-        .pipe(dest('./js/'));
+  return src(vendorFiles).pipe(concat("vendor.js")).pipe(dest("./js/"));
 }
 
-
-// cachebusting task
-const cbString = new Date().getTime();
-
+/** Refreshes existing cache-busting query values in the root HTML routes. */
 function cacheBustTask() {
-    return src(['./*.html'])
-        .pipe(replace(/cb=\d+/g, 'cb=' + cbString)) //using gulp replace plugin to prevent caching (using regex /'what we looking for' 'cb=' 'looking for any number' '\d'+/g)=> looking for nth number of digit
-        //replace('what we are looking for ','what are replacing with')
-        .pipe(dest('.'));
+  const cacheBustValue = Date.now();
+
+  return src(["./*.html"])
+    .pipe(replace(/cb=\d+/g, `cb=${cacheBustValue}`))
+    .pipe(dest("."));
 }
 
-// watch task
+/** Watches authored Sass and JavaScript and rebuilds the affected bundles. */
 function watchTasks() {
-    watch([files.scssPath, './assets/js/*.js'],
-        parallel(scssTask, jsTask)
-    );
+  return watch(
+    [files.scssPath, "./assets/js/*.js"],
+    parallel(scssTask, jsTask),
+  );
 }
 
-// Default task
-exports.default = series(
-    parallel(scssTask, jsTask, jsVendorTask),
-    cacheBustTask,
-    watchTasks
-)
+const build = series(parallel(scssTask, jsTask, jsVendorTask), cacheBustTask);
+
+exports.build = build;
+exports.watch = watchTasks;
+exports.default = series(build, watchTasks);
