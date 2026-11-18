@@ -1,18 +1,14 @@
-// Sticky Navbar
-window.onscroll = function () {
-    stickyNavbar()
-};
-
+// Sticky navbar: do not override unrelated scroll listeners.
 var navBar = document.querySelector('header');
-var sticky = navBar.offsetTop;
+var sticky = navBar?.offsetTop ?? 0;
 
 function stickyNavbar() {
-    if (window.pageYOffset > sticky) {
-        navBar.classList.add('sticky')
-    } else {
-        navBar.classList.remove('sticky');
-    }
+    if (!navBar) return;
+    navBar.classList.toggle('sticky', window.pageYOffset > sticky);
 }
+
+window.addEventListener('scroll', stickyNavbar, { passive: true });
+stickyNavbar();
 
 // Hamburger menu
 var Hamburger = document.querySelector('.hamburger');
@@ -23,10 +19,18 @@ function cross() {
 }
 
 function menuShow() {
-    var menuFull = document.querySelector('header ul')
-    menuFull.classList.toggle('clicked')
-
+    var menuFull = document.querySelector('header ul');
+    if (!menuFull || !Hamburger) return;
+    var expanded = menuFull.classList.toggle('clicked');
+    Hamburger.setAttribute('aria-expanded', String(expanded));
 }
+
+Hamburger?.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        Hamburger.click();
+    }
+});
 
 // Services tabs
 var tabsContainer = document.querySelectorAll('.tabs-container');
@@ -37,57 +41,40 @@ tabsContainer.forEach(tc => {
 
 
 
-if (window.innerWidth > 1200) {
-    console.log('suceess')
-    //Particles JS
-    var particlesMarkup = document.querySelector('#particles-js');
-    if (particlesMarkup) {
-        particlesJS.load('particles-js', './particles setting/particles-old.json', function () {
-            console.log('callback - particles.js config loaded');
-        });
-    }
+// Load a particle configuration only when the responsive mode changes.
+// Avoid restarting each canvas (and refetching JSON) on every resize event.
+let activeParticleMode = null;
 
-    var particlesMarkup2 = document.querySelector('#particles-js2');
-    if (particlesMarkup2) {
-        particlesJS.load('particles-js2', './particles setting/particlesjs-config.json', function () {
-            console.log('callback - particles.js config loaded');
-        });
+function updateParticlesForViewport() {
+    const particles = window.particlesJS;
+    if (!particles || typeof particles.load !== 'function') return;
+
+    const mode = window.innerWidth > 1200 ? 'desktop' : 'mobile';
+    if (mode === activeParticleMode) return;
+
+    const sources = mode === 'desktop'
+        ? [
+            ['particles-js', './particles setting/particles-old.json'],
+            ['particles-js2', './particles setting/particlesjs-config.json'],
+        ]
+        : [
+            ['particles-js', './particles setting/particles-old-mobile.json'],
+            ['particles-js2', './particles setting/particles-config-mobile.json'],
+        ];
+
+    for (const [id, source] of sources) {
+        if (document.getElementById(id)) particles.load(id, source);
     }
+    activeParticleMode = mode;
 }
 
-// Responsive Particles JS
-window.addEventListener('resize', (e) => {
-    checkOnResize();
-}, true);
-
-function checkOnResize() {
-    if (window.innerWidth > 1200) {
-        // console.log('suceess')
-        // Particles JS
-        particlesJS.load('particles-js', './particles setting/particles-old.json', function () {
-            console.log('callback - particles.js config loaded');
-        });
-
-        particlesJS.load('particles-js2', './particles setting/particlesjs-config.json', function () {
-            console.log('callback - particles.js config loaded');
-        });
-    } else {
-        particlesJS.load('particles-js', './particles setting/particles-old-mobile.json', function () {
-            console.log('callback - particles.js config loaded');
-        });
-
-        particlesJS.load('particles-js2', './particles setting/particles-config-mobile.json', function () {
-            console.log('callback - particles.js config loaded');
-        });
-    }
-}
-
-
+window.addEventListener('resize', updateParticlesForViewport, { passive: true });
+updateParticlesForViewport();
 
 // Glide JS
 var glideMarkup = document.querySelector('.slideshow .glide');
 if (glideMarkup) {
-    new Glide('.glide', {
+    new Glide('.slideshow .glide', {
         type: 'carousel',
         autoplay: 1500,
         perView: 5,
@@ -109,7 +96,7 @@ if (glideMarkup) {
 // Testimonial Glide JS
 var testimonialglideMarkup = document.querySelector('.testimonial .glide');
 if (testimonialglideMarkup) {
-    new Glide('.glide', {
+    new Glide('.testimonial .glide', {
         type: 'carousel',
         perView: '1',
         gap: 10
@@ -119,7 +106,7 @@ if (testimonialglideMarkup) {
 //Default carousel
 var defaultCarousel = document.querySelector('.carousel .glide')
 if (defaultCarousel) {
-    new Glide('.glide', {
+    new Glide('.carousel .glide', {
         type: 'carousel',
         autoplay: 1500,
         perView: 5,
